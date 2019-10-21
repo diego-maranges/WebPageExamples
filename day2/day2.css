@@ -1,0 +1,43 @@
+.magazine-photo
+{
+  width: 100%;
+  margin-top: -40%;
+  margin: 0% 0% 0% 0%;
+}
+
+.magazine-photo img
+{
+  position:relative;
+  width: 100%;
+}
+
+.magazine-photo .magazine-photo__line
+{
+  text-align: center;
+  margin-left: 30%;
+  width:40%;
+  position: absolute;
+  z-index: 999;
+  margin-top: 91%;
+}
+
+.magazine-photo .magazine-photo-title
+{
+  text-align: center;
+  margin-top: 80%;
+  width:100%;
+  font-size: 35px;
+  position: absolute;
+  z-index: 999;
+  font-family: 'Aclonica';
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  display: block;
+  width: 100%;
+  font-size: 100px;
+  text-transform: uppercase;
+  letter-spacing: 50px
+}
