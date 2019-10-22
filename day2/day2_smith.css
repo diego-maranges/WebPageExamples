@@ -1,0 +1,108 @@
+/* ---------- PAGE LAYOUT ---------- */
+.container {
+   position: absolute;
+}
+
+h1 .logo {
+   position: absolute;
+   top: -50px;
+   left: -10px;
+   z-index: 1;
+   color: white;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   display: block;
+   letter-spacing: -35px;
+   font-size: 320px;
+   font-family: 'Raleway', sans-serif;
+}
+
+h1 .pre {
+   position: absolute;
+   top: 110px;
+   left: 124px;
+   display: block;
+   clear: inline-start;
+   z-index: 2;
+   font-size: 28px;
+   font-family: 'Raleway', sans-serif;
+}
+
+h1 .title {
+   position: absolute;
+   margin-top: 0px;
+   left: 430px;
+   top: 40px;
+   font-size: 189px;
+   font-family: 'Sumana', serif;
+   color: DodgerBlue;
+   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+h2.subtitle {
+   position: absolute;
+   width: 300%;
+   top: 35px;
+   left: 430px;
+   font-size: 30px;
+   font-family: 'Sumana', serif;
+   text-shadow: -0.5px 0  #0000ff, 0 0.5px  #0000ff, 0.5px 0  #0000ff, 0 -0.5px  #0000ff;
+}
+
+.lower {
+   margin-left:35px;
+   margin-top: 220px;
+   font-family: 'Rozha One', serif;
+}
+
+.up-left p.gq {
+   font-size: 14px;
+   font-family: 'Raleway', sans-serif;
+   line-height: 2.5;
+}
+
+.up-left h2 {
+   line-height: 0.7;
+   font-size: 42px;
+}
+
+.up-left h2 span {
+   font-size: 100px;
+}
+
+.up-left p.uk {
+   text-transform: uppercase;
+   font-size: 14px;
+}
+
+.up-left h4.block-text:before {
+ content:'\A';
+}
+
+.up-left h4.block-text {
+   line-height: 0.99;
+   text-transform: capitalize;
+   white-space: pre;
+   color: white;
+}
+
+.up-left h4.block-text span:after {
+  content: '\A';
+}
+
+.up-left h4.block-text span {
+   font-size: 45px;
+   margin-left: 9px;
+   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+.up-left h4.block-text span:last-child {
+   line-height: 0;
+   font-size: 15px;
+}
+
+.up-right {
+   position: absolute;
+   margin-top: -300px;
+   margin-left: 500px;
+   font-size: 40px;
+}
