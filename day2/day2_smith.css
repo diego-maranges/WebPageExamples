@@ -90,19 +90,39 @@ h2.subtitle {
 }
 
 .up-left h4.block-text span {
-   font-size: 45px;
-   margin-left: 9px;
-   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+   font-size: 40px;
+   padding-left: 15px;
+   padding-right: 15px;
+   background-color: #3366FF;
+   line-height: 1.3;
 }
 
 .up-left h4.block-text span:last-child {
-   line-height: 0;
    font-size: 15px;
 }
 
 .up-right {
    position: absolute;
-   margin-top: -300px;
-   margin-left: 500px;
-   font-size: 40px;
+   color: white;
+   margin-top: -410px;
+   margin-left: 510px;
+   font-size: 90px;
+}
+
+.low-left h4.white span:after {
+  content: '\A';
+}
+
+.low-left .white span{
+   font-size: 30px;
+   padding-left: 15px;
+   padding-right: 15px;
+   background-color: white;
+   line-height: 1.5;
+}
+
+.low-left .white {
+   margin-top: 200px;
+   position: absolute;
+   white-space: pre;
 }
