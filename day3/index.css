@@ -1,0 +1,122 @@
+.tablist {
+    text-align: end;
+}
+
+.tablist button {
+    text-transform: capitalize;
+    background-color: transparent;
+    border: none;
+    width: 79px;
+    height: 27px;
+    vertical-align: top;
+}
+
+.up-list {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 15px;
+    background-color: aliceblue;
+    padding-bottom: 50px;
+}
+
+.up-list img {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+.up-list .place, .up-list .food, .up-list .seasson {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+.up-list .imgPlace {
+    margin-left: 105px;
+}
+
+.up-list .imgFood {
+    margin-left: (513 - 138)px;
+}
+
+.up-list .imgSeasson {
+    margin-left: (984 - (513 - 138))px;
+}
+
+.up-list div {
+    background-color: white;
+    text-decoration: underline;
+    text-transform: capitalize;
+    padding: 20px;
+}
+
+.up-list .place {
+    margin-top: -40px;
+    margin-left: 205px;
+}
+
+.up-list .food {
+    margin-top: -40px;
+    margin-left: 600px;
+}
+
+.up-list .seasson {
+    margin-top: -40px;
+    margin-left: 990px;
+}
+
+.amsterdan {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 500px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.amsterdan p {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.me {
+    text-transform: capitalize;
+    color: #47525E;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-left: 900px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.me p {
+    text-transform: none;
+    color: #47525E;
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    width: 214px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: -15px;
+    text-align: start;
+}
