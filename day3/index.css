@@ -67,15 +67,19 @@
        
 }
 
+.container {
+    text-align: center;
+}
+
 .amsterdan {
+    display: inline-block;
     color: #47525E;
     font-family: Lato;
     font-size: 15px;
     font-weight: 400;
     line-height: 19px;
-    margin-top: 20px;
-    margin-left: 100px;
-    margin-right: 500px;
+    margin-top: 40px;
+    width: 730px;
     background-color: aliceblue;
     text-align: center;
 }
@@ -91,15 +95,22 @@
 }
 
 .me {
+    align-self: center;
+    display: inline-block;
+    width: 214px;
+    height: 400px;
+    vertical-align: 100px;
+    margin-left: 50px
+}
+
+.me h1 {
+    text-align: center;
     text-transform: capitalize;
     color: #47525E;
     font-family: Lato;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    margin-left: 900px;
-    margin-top: 60px;
-    text-align: center;
 }
 
 .me p {
@@ -109,9 +120,6 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 15px;
-    width: 214px;
-    margin-left: 100px;
-    margin-right: 100px;
     margin-bottom: -15px;
     text-align: start;
 }
