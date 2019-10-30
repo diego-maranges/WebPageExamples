@@ -1,5 +1,12 @@
+html {
+    font-family: "Lato", serif;
+    min-width: 100%;
+    position: relative;
+}
+
 .tablist {
     text-align: end;
+    padding: 30px;
 }
 
 .tablist a {
@@ -22,36 +29,26 @@
 
 .up-list div {
     margin-top: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
     margin-bottom: 30px;
     display: inline-block;
 }
 
 .up-list div img {
     display: inline-block;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     vertical-align: top;
 }
 
 .up-list div a {
     display: block;
     position: absolute;
-    width: 120px;
-    font-family: Lato;
     font-size: 12px;
-    font-weight: 300;
-    line-height: 15px;
+    text-transform: capitalize;
     color: black;
     background-color: white;
-    text-transform: capitalize;
     margin-top: -40px;
     padding: 20px;
 }
-
 
 .up-list div.place a {
     margin-left: 100px;
@@ -59,12 +56,10 @@
 
 .up-list div.food a {
     margin-left: 140px;
-       
 }
 
 .up-list div.seasson a {
     margin-left: 100px;
-       
 }
 
 .container {
@@ -74,10 +69,7 @@
 .article {
     display: inline-block;
     color: #47525E;
-    font-family: Lato;
     font-size: 15px;
-    font-weight: 400;
-    line-height: 19px;
     margin-top: 40px;
     width: 730px;
     background-color: aliceblue;
@@ -86,20 +78,17 @@
 
 .article p {
     color: #47525E;
-    font-family: Lato;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 .me {
-    align-self: center;
     display: inline-block;
+    vertical-align: 100px;
+    align-self: center;
     width: 214px;
     height: 400px;
-    vertical-align: 100px;
     margin-left: 50px
 }
 
@@ -107,19 +96,13 @@
     text-align: center;
     text-transform: capitalize;
     color: #47525E;
-    font-family: Lato;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
 }
 
 .me p {
+    text-align: start;
     text-transform: none;
     color: #47525E;
-    font-family: Lato;
     font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
     margin-bottom: -15px;
-    text-align: start;
 }
