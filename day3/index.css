@@ -2,7 +2,7 @@
     text-align: end;
 }
 
-.tablist button {
+.tablist a {
     z-index: 5;
     text-transform: capitalize;
     background-color: transparent;
@@ -10,6 +10,9 @@
     width: 79px;
     height: 27px;
     vertical-align: top;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 
 .up-list {
@@ -17,7 +20,7 @@
     text-align: center
 }
 
-.up-list .place, .up-list .food, .up-list .seasson {
+.up-list div {
     margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
@@ -34,35 +37,32 @@
     vertical-align: top;
 }
 
-.up-list div button {
+.up-list div a {
     display: block;
+    position: absolute;
+    width: 120px;
     font-family: Lato;
     font-size: 12px;
     font-weight: 300;
     line-height: 15px;
+    color: black;
     background-color: white;
-    text-decoration: underline;
     text-transform: capitalize;
+    margin-top: -40px;
     padding: 20px;
 }
 
 
-.up-list div.place button {
-    position: absolute;
-    margin-top: -40px;
+.up-list div.place a {
     margin-left: 100px;
 }
 
-.up-list div.food button {
-    position: absolute;
-    margin-top: -40px;
+.up-list div.food a {
     margin-left: 140px;
        
 }
 
-.up-list div.seasson button {
-    position: absolute;
-    margin-top: -40px;
+.up-list div.seasson a {
     margin-left: 100px;
        
 }
@@ -71,7 +71,7 @@
     text-align: center;
 }
 
-.amsterdan {
+.article {
     display: inline-block;
     color: #47525E;
     font-family: Lato;
@@ -84,7 +84,7 @@
     text-align: center;
 }
 
-.amsterdan p {
+.article p {
     color: #47525E;
     font-family: Lato;
     font-size: 16px;
