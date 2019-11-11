@@ -1,5 +1,5 @@
 var numberOfRowsAndColumns = 3;
-var totalElements = numberOfRowsAndColumns*numberOfRowsAndColumns;
+var totalElements = numberOfRowsAndColumns * numberOfRowsAndColumns;
 
 function reply_click(clicked_id) {
     var victory = document.getElementById("victory");
@@ -20,13 +20,13 @@ function moveToNewPosition(actualId) {
     var leftId = actualId - 1;
     var topId = actualId - numberOfRowsAndColumns;
     var bottomId = actualId + numberOfRowsAndColumns;
-    
+
     var actualButton = document.getElementById(actualId);
     var rightButton = document.getElementById(rightId);
     var leftButton = document.getElementById(leftId);
     var topButton = document.getElementById(topId);
     var bottomButton = document.getElementById(bottomId);
-    
+
     if (rightId <= totalElements && rightButton.value === "0") {
         rightButton.value = actualButton.value;
         rightButton.innerHTML = actualButton.innerHTML;
@@ -47,12 +47,12 @@ function moveToNewPosition(actualId) {
         bottomButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
         actualButton.value = "0"
-    }    
+    }
 }
 
 function checkIfWin() {
     var result = true;
-    for (i = 1; i <= 8; i++) {
+    for (i = 1; i <= totalElements - 1; i++) {
         var values = parseInt(document.getElementById(i).value, 10);
         result &= (values === i);
     }
@@ -60,18 +60,25 @@ function checkIfWin() {
 }
 
 function restartGame() {
-    var temp = [1, 2, 3, 4, 5, 6, 7, 8, 0].sort(function() {
+    var temp = [];
+    for (i = 1; i < totalElements; i++) {
+        temp.push(i);
+    }
+    temp.push("0");
+    
+    temp = temp.sort(function () {
         return .5 - Math.random();
     });
-    temp = [1, 2, 3, 4, 5, 6, 7, 0, 8]
-    for(i = 1, j = 0; i <= 9; i++, j++) {
+    
+    for (i = 1, j = 0; i <= 9; i++, j++) {
         document.getElementById(i).innerHTML = temp[j];
         document.getElementById(i).value = temp[j];
     }
+    
     document.getElementById("victory").className = "noVictory";
     document.getElementById("start").style.display = "none";
     document.getElementById("restart").style.display = "none";
-    document.getElementById("victory").style.visibility = "hidden"; 
+    document.getElementById("victory").style.visibility = "hidden";
 }
 
 function startGame() {
