@@ -1,7 +1,21 @@
 var numberOfRowsAndColumns = 3;
+var totalElements = numberOfRowsAndColumns*numberOfRowsAndColumns;
 
 function reply_click(clicked_id) {
-    var actualId = parseInt(clicked_id, 10);
+    var victory = document.getElementById("victory");
+    if (victory.className === "noVictory") {
+        var actualId = parseInt(clicked_id, 10);
+        moveToNewPosition(actualId);
+        if (checkIfWin()) {
+            victory.className = "victoryAlert";
+            document.getElementById("restart").style.display = "block";
+            victory.style.display = "block";
+            victory.style.visibility = "visible";
+        }
+    }
+}
+
+function moveToNewPosition(actualId) {
     var rightId = actualId + 1;
     var leftId = actualId - 1;
     var topId = actualId - numberOfRowsAndColumns;
@@ -13,7 +27,7 @@ function reply_click(clicked_id) {
     var topButton = document.getElementById(topId);
     var bottomButton = document.getElementById(bottomId);
     
-    if (rightId <= 9 && rightButton.value === "0") {
+    if (rightId <= totalElements && rightButton.value === "0") {
         rightButton.value = actualButton.value;
         rightButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
@@ -28,20 +42,38 @@ function reply_click(clicked_id) {
         topButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
         actualButton.value = "0"
-    } else if (bottomId <= 9 && bottomButton.value === "0") {
+    } else if (bottomId <= totalElements && bottomButton.value === "0") {
         bottomButton.value = actualButton.value;
         bottomButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
         actualButton.value = "0"
+    }    
+}
+
+function checkIfWin() {
+    var result = true;
+    for (i = 1; i <= 8; i++) {
+        var values = parseInt(document.getElementById(i).value, 10);
+        result &= (values === i);
     }
+    return result;
 }
 
 function restartGame() {
     var temp = [1, 2, 3, 4, 5, 6, 7, 8, 0].sort(function() {
         return .5 - Math.random();
     });
+    temp = [1, 2, 3, 4, 5, 6, 7, 0, 8]
     for(i = 1, j = 0; i <= 9; i++, j++) {
         document.getElementById(i).innerHTML = temp[j];
         document.getElementById(i).value = temp[j];
     }
+    document.getElementById("victory").className = "noVictory";
+    document.getElementById("start").style.display = "none";
+    document.getElementById("restart").style.display = "none";
+    document.getElementById("victory").style.visibility = "hidden"; 
+}
+
+function startGame() {
+    
 }

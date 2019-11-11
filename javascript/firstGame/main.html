@@ -7,41 +7,45 @@
 
     <body>
         <div class="gameContainer">
+            <div class="victoryAlert" id="victory">You won!!</div>
             <div class="row">
-                <button class="col-1" id="1" onClick="reply_click(this.id)" value="1">
+                <button id="1" onClick="reply_click(this.id)" value="1">
                     1
                 </button>
-                <button class="col-1" id="2" onClick="reply_click(this.id)" value="2">
+                <button id="2" onClick="reply_click(this.id)" value="2">
                     2
                 </button>
-                <button class="col-1" id="3" onClick="reply_click(this.id)" value="3">
+                <button id="3" onClick="reply_click(this.id)" value="3">
                     3
                 </button>
             </div>
             <div class="row">
-                <button class="col-1" id="4" onClick="reply_click(this.id)" value="4">
+                <button id="4" onClick="reply_click(this.id)" value="4">
                     4
                 </button>
-                <button class="col-1" id="5" onClick="reply_click(this.id)" value="5">
+                <button id="5" onClick="reply_click(this.id)" value="5">
                     5
                 </button>
-                <button class="col-1" id="6" onClick="reply_click(this.id)" value="6">
+                <button id="6" onClick="reply_click(this.id)" value="6">
                     6
                 </button>
             </div>
             <div class="row">
-                <button class="col-1" id="7" onClick="reply_click(this.id)" value="7">
+                <button id="7" onClick="reply_click(this.id)" value="7">
                     7
                 </button>
-                <button class="col-1" id="8" onClick="reply_click(this.id)" value="8">
+                <button id="8" onClick="reply_click(this.id)" value="8">
                     8
                 </button>
-                <button class="col-1" id="9" onClick="reply_click(this.id)" value="0">
+                <button id="9" onClick="reply_click(this.id)" value="0">
                     0
                 </button>
             </div>
-            <div class="row">
-                <button class="col-3" onClick="restartGame()">Restart</button>
+            <div class="row specialButton" id="start">
+                <button onClick="startGame()">Start</button>
+            </div>
+            <div class="row specialButton" id="restart">
+                <button onClick="startGame()">Restart</button>
             </div>
         </div>
         <script type="text/javascript" src="main.js"></script>
