@@ -99,9 +99,14 @@ function restartGame() {
 
 function startGame() {
     // Adds an element to the document
-    var p = document.getElementById(container);
-    var newElement = document.createElement(elementTag);
-    newElement.setAttribute('id', elementId);
-    newElement.innerHTML = html;
-    p.appendChild(newElement);
+    var cont = document.getElementsByClassName(container);
+    var newElement = document.createElement("div");
+    newElement.setAttribute('class', "row");
+    var newColumn = document.createElement("button");
+    newColumn.setAttribute('id', "1");
+    newColumn.setAttribute('onClick', "reply_click(this.id)");
+    newColumn.setAttribute('value', "1");
+    newColumn.innerHTML = 1;
+    newElement.appendChild(newColumn);
+    cont[0].appendChild(newElement);
 }
