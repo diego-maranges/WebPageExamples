@@ -1,16 +1,27 @@
+/*ids*/
+var victoryId = "victory";
+var audio = "winerSound";
+var start = "start";
+var restart = "restart";
+
+/*classes*/
+var container = "gameContainer";
+var vAlert = "victoryAlert";
+
+/*information about the game*/
 var numberOfRAndC = 3;
 var totalElements = numberOfRAndC * numberOfRAndC;
 
 function reply_click(clicked_id) {
-    var victory = document.getElementById("victory");
+    var victory = document.getElementById(victoryId);
     if (victory.className === "noVictory") {
         var actualId = parseInt(clicked_id, 10);
-        moveToNewPosition(actualId);
-        if (checkIfWin()) {
-            victory.className = "victoryAlert";
+        if (moveToNewPosition(actualId) && checkIfWin()) {
+            victory.className = vAlert;
             document.getElementById("restart").style.display = "block";
             victory.style.display = "block";
             victory.style.visibility = "visible";
+            document.getElementById(audio).play();
         }
     }
 }
@@ -31,23 +42,28 @@ function moveToNewPosition(actualId) {
         rightButton.value = actualButton.value;
         rightButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
-        actualButton.value = "0"
+        actualButton.value = "0";
+        return true;
     } else if (actualId % numberOfRAndC != 1 && leftId >= 1 && leftButton.value === "0") {
         leftButton.value = actualButton.value;
         leftButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
-        actualButton.value = "0"
+        actualButton.value = "0";
+        return true;
     } else if (topId >= 1 && topButton.value === "0") {
         topButton.value = actualButton.value;
         topButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
-        actualButton.value = "0"
+        actualButton.value = "0";
+        return true;
     } else if (bottomId <= totalElements && bottomButton.value === "0") {
         bottomButton.value = actualButton.value;
         bottomButton.innerHTML = actualButton.innerHTML;
         actualButton.innerHTML = "0";
-        actualButton.value = "0"
+        actualButton.value = "0";
+        return true;
     }
+    return false;
 }
 
 function checkIfWin() {
@@ -75,12 +91,17 @@ function restartGame() {
         document.getElementById(i).value = temp[j];
     }
 
-    document.getElementById("victory").className = "noVictory";
-    document.getElementById("start").style.display = "none";
-    document.getElementById("restart").style.display = "none";
-    document.getElementById("victory").style.visibility = "hidden";
+    document.getElementById(victoryId).className = "noVictory";
+    document.getElementById(start).style.display = "none";
+    document.getElementById(restart).style.display = "none";
+    document.getElementById(victoryId).style.visibility = "hidden";
 }
 
 function startGame() {
-
+    // Adds an element to the document
+    var p = document.getElementById(container);
+    var newElement = document.createElement(elementTag);
+    newElement.setAttribute('id', elementId);
+    newElement.innerHTML = html;
+    p.appendChild(newElement);
 }
