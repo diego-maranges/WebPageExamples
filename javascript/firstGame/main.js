@@ -18,10 +18,10 @@ function reply_click(clicked_id) {
         var actualId = parseInt(clicked_id, 10);
         if (moveToNewPosition(actualId) && checkIfWin()) {
             victory.className = vAlert;
-            document.getElementById("restart").style.display = "block";
+            document.getElementById(audio).play();
+            document.getElementById(restart).style.display = "block";
             victory.style.display = "block";
             victory.style.visibility = "visible";
-            document.getElementById(audio).play();
         }
     }
 }
@@ -77,6 +77,9 @@ function checkIfWin() {
 
 function restartGame() {
     var temp = [];
+    sound = document.getElementById(audio);
+    sound.pause();
+    sound.currentTime = 0;
     for (i = 1; i < totalElements; i++) {
         temp.push(i);
     }
