@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <title>A Game</title>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js"></script>
@@ -13,44 +14,35 @@
     <div class="gameContainer">
         <div class="victoryAlert" id="victory">You won!!</div>
         <div class="row">
-            <button id="1" onClick="reply_click(this.id)" value="1">
-                1
-            </button>
-            <button id="2" onClick="reply_click(this.id)" value="2">
-                2
-            </button>
-            <button id="3" onClick="reply_click(this.id)" value="3">
-                3
-            </button>
+            <div class="img1" id="r1c1" onClick="reply_click(this.id)">
+            </div>
+            <div class="img2" id="r1c2" onClick="reply_click(this.id)">
+            </div>
+            <div class="img3" id="r1c3" onClick="reply_click(this.id)">
+            </div>
         </div>
         <div class="row">
-            <button id="4" onClick="reply_click(this.id)" value="4">
-                4
-            </button>
-            <button id="5" onClick="reply_click(this.id)" value="5">
-                5
-            </button>
-            <button id="6" onClick="reply_click(this.id)" value="6">
-                6
-            </button>
+            <div class="img4" id="r2c1" onClick="reply_click(this.id)">
+            </div>
+            <div class="img5" id="r2c2" onClick="reply_click(this.id)">
+            </div>
+            <div class="img6" id="r2c3" onClick="reply_click(this.id)">
+            </div>
         </div>
         <div class="row">
-            <button id="7" onClick="reply_click(this.id)" value="7">
-                7
-            </button>
-            <button id="8" onClick="reply_click(this.id)" value="8">
-                8
-            </button>
-            <button id="9" onClick="reply_click(this.id)" value="0">
-                0
-            </button>
+            <div class="img7" id="r3c1" onClick="reply_click(this.id)">
+            </div>
+            <div class="img8" id="r3c2" onClick="reply_click(this.id)">
+            </div>
+            <div class="img0" id="r3c3" onClick="reply_click(this.id)">
+            </div>
         </div>
         <!--<input id="numbersYxY" value= "insert number">-->
-        <div class="row specialButton" id="start">
-            <button onClick="restartGame()">Start</button>
+        <div class="row specialdiv" id="start">
+            <div onClick="restartGame()">Start</div>
         </div>
-        <div class="row specialButton" id="restart">
-            <button onClick="restartGame()">Restart</button>
+        <div class="row specialdiv" id="restart">
+            <div onClick="restartGame()">Restart</div>
         </div>
     </div>
 </body></html>

@@ -5,14 +5,12 @@
 
 body {
     line-height: 1;
-    margin: 0;
+    margin-top: 20px;
 }
 
 .gameContainer {
-    width: 100%;
+    width: 960px;
     margin: auto;
-    margin-top: 40px;
-
 }
 
 .row {
@@ -20,24 +18,22 @@ body {
     width: 100%;
     text-align: center;
 }
-
 /*########### specific about the game ###########*/
 
 
-.gameContainer .row button {
-    width: 20%;
+.gameContainer .row div {
+    display: inline-block;
     align-items: center;
-    margin: 2px;
-    border-radius: 6px;
-    border-color: blue;
-    background-color: transparent;
-    padding: 50px;
-    border-radius: 12px;
     font-size: 60px;
-
+    width: 133px;
+    height: 96px;
 }
 
-.gameContainer .row.specialButton button {
+.gameContainer .row div:hover {
+    cursor: pointer;
+}
+
+.gameContainer .row.specialButton div {
     padding: 50px;
     width: 50%;
 }
@@ -55,4 +51,32 @@ body {
 
 #restart {
     display: none;
+}
+
+.img1 {
+    background-image: url('images/row-1-col-1.jpg');
+}
+.img2 {
+    background-image: url("images/row-1-col-2.jpg");
+}
+.img3 {
+    background-image: url('images/row-1-col-3.jpg');
+}
+.img4 {
+    background-image: url('images/row-2-col-1.jpg');
+}
+.img5 {
+    background-image: url("images/row-2-col-2.jpg");
+}
+.img6 {
+    background-image: url('images/row-2-col-3.jpg');
+}
+.img7 {
+    background-image: url("images/row-3-col-1.jpg");
+}
+.img8 {
+    background-image: url('images/row-3-col-2.jpg');
+}
+.img0 {
+    background-image: url("images/white.png");
 }

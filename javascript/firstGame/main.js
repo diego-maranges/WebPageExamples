@@ -3,6 +3,7 @@ var victoryId = "victory";
 var audio = "winerSound";
 var start = "start";
 var restart = "restart";
+var buttons = ["r1c1", "r1c2", "r1c3", "r2c1", "r2c2", "r2c3", "r3c1", "r3c2", "r3c3"];
 
 /*classes*/
 var container = "gameContainer";
@@ -15,52 +16,44 @@ var totalElements = numberOfRAndC * numberOfRAndC;
 function reply_click(clicked_id) {
     var victory = document.getElementById(victoryId);
     if (victory.className === "noVictory") {
-        var actualId = parseInt(clicked_id, 10);
-        if (moveToNewPosition(actualId) && checkIfWin()) {
+        if (moveToNewPosition(clicked_id) && checkIfWin()) {
             victory.className = vAlert;
             document.getElementById(audio).play();
             document.getElementById(restart).style.display = "block";
             victory.style.display = "block";
-            victory.style.visibility = "visible";
         }
     }
 }
 
 function moveToNewPosition(actualId) {
-    var rightId = actualId + 1;
-    var leftId = actualId - 1;
-    var topId = actualId - numberOfRAndC;
-    var bottomId = actualId + numberOfRAndC;
+    var rightId = buttons.indexOf(actualId) + 1;
+    var leftId = buttons.indexOf(actualId) - 1;
+    var topId = buttons.indexOf(actualId) - numberOfRAndC;
+    var bottomId = buttons.indexOf(actualId) + numberOfRAndC;
 
     var actualButton = document.getElementById(actualId);
-    var rightButton = document.getElementById(rightId);
-    var leftButton = document.getElementById(leftId);
-    var topButton = document.getElementById(topId);
-    var bottomButton = document.getElementById(bottomId);
+    var rightButton = document.getElementById(buttons[rightId]);
+    var leftButton = document.getElementById(buttons[leftId]);
+    var topButton = document.getElementById(buttons[topId]);
+    var bottomButton = document.getElementById(buttons[bottomId]);
+    console.log(rightId, leftId, topId, bottomId)
 
-    if (actualId % numberOfRAndC != 0 && rightId <= totalElements && rightButton.value === "0") {
-        rightButton.value = actualButton.value;
-        rightButton.innerHTML = actualButton.innerHTML;
-        actualButton.innerHTML = "0";
-        actualButton.value = "0";
+    if (buttons.indexOf(actualId) % numberOfRAndC != 2 && rightId < totalElements && rightButton.className == "img0") {
+        rightButton.className = actualButton.className;
+        actualButton.className = "img0";
         return true;
-    } else if (actualId % numberOfRAndC != 1 && leftId >= 1 && leftButton.value === "0") {
-        leftButton.value = actualButton.value;
-        leftButton.innerHTML = actualButton.innerHTML;
-        actualButton.innerHTML = "0";
-        actualButton.value = "0";
+    } else if (buttons.indexOf(actualId) % numberOfRAndC != 0 && leftId >= 0 && leftButton.className === "img0") {
+        leftButton.className = actualButton.className;
+        actualButton.className = "img0";
         return true;
-    } else if (topId >= 1 && topButton.value === "0") {
-        topButton.value = actualButton.value;
-        topButton.innerHTML = actualButton.innerHTML;
-        actualButton.innerHTML = "0";
-        actualButton.value = "0";
+    } else if (topId >= 0 && topButton.className === "img0") {
+        console.log("as")
+        topButton.className = actualButton.className;
+        actualButton.className = "img0";
         return true;
-    } else if (bottomId <= totalElements && bottomButton.value === "0") {
-        bottomButton.value = actualButton.value;
-        bottomButton.innerHTML = actualButton.innerHTML;
-        actualButton.innerHTML = "0";
-        actualButton.value = "0";
+    } else if (bottomId < totalElements && bottomButton.className === "img0") {
+        bottomButton.className = actualButton.className;
+        actualButton.className = "img0";
         return true;
     }
     return false;
@@ -68,18 +61,20 @@ function moveToNewPosition(actualId) {
 
 function checkIfWin() {
     var result = true;
-    for (i = 1; i <= totalElements - 1; i++) {
-        var values = parseInt(document.getElementById(i).value, 10);
-        result &= (values === i);
+    var values;
+    for (i = 0; i < totalElements - 1; i++) {
+        result &= (document.getElementById(buttons[i]).className === ("img" + (i + 1)));
     }
     return result;
 }
 
 function restartGame() {
     var temp = [];
+
     sound = document.getElementById(audio);
     sound.pause();
     sound.currentTime = 0;
+
     for (i = 1; i < totalElements; i++) {
         temp.push(i);
     }
@@ -89,27 +84,25 @@ function restartGame() {
         return .5 - Math.random();
     });
 
-    for (i = 1, j = 0; i <= 9; i++, j++) {
-        document.getElementById(i).innerHTML = temp[j];
-        document.getElementById(i).value = temp[j];
+    for (i = 0; i < 9; i++) {
+        document.getElementById(buttons[i]).className = "img" + temp[i];
     }
 
     document.getElementById(victoryId).className = "noVictory";
     document.getElementById(start).style.display = "none";
     document.getElementById(restart).style.display = "none";
-    document.getElementById(victoryId).style.visibility = "hidden";
+    document.getElementById(victoryId).style.display = "none";
 }
-
+/*
 function startGame() {
     // Adds an element to the document
     var cont = document.getElementsByClassName(container);
     var newElement = document.createElement("div");
     newElement.setAttribute('class', "row");
-    var newColumn = document.createElement("button");
+    var newColumn = document.createElement("div");
     newColumn.setAttribute('id', "1");
     newColumn.setAttribute('onClick', "reply_click(this.id)");
     newColumn.setAttribute('value', "1");
-    newColumn.innerHTML = 1;
     newElement.appendChild(newColumn);
     cont[0].appendChild(newElement);
-}
+}*/
